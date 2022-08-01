@@ -1,7 +1,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.flutter_project">
    <application
-        android:label="Flutter equatable"
+        android:label="Flutter session"
         android:name="${applicationName}"
         android:icon="@mipmap/ic_launcher">
         <activity
