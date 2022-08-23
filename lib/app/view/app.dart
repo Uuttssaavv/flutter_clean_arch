@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_project/features/auth/presentation/bloc/authentication_bloc.dart';
+import 'package:flutter_project/features/homepage/presentation/bloc/homepage_bloc.dart';
 import 'package:flutter_project/routes/app_routers.gr.dart';
 
 class App extends StatelessWidget {
@@ -13,6 +14,9 @@ class App extends StatelessWidget {
       providers: [
         BlocProvider(
           create: (_) => AuthenticationBloc(),
+        ),
+        BlocProvider(
+          create: (_) => HomepageBloc(),
         ),
       ],
       child: MaterialApp.router(
