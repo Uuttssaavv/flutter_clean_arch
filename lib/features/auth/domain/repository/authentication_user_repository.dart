@@ -1,5 +1,5 @@
 import 'package:dartz/dartz.dart';
-import 'package:flutter_project/features/shared/failure.dart';
+import 'package:flutter_project/core/failure.dart';
 
 import '../../data/models/user_model.dart';
 

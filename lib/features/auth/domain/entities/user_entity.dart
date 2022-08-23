@@ -1,4 +1,4 @@
-class User {
+class UserEntity {
   final int id;
   final String username;
   final String email;
@@ -8,7 +8,7 @@ class User {
   final String image;
   final String token;
 
-  const User(
+  const UserEntity(
     this.id,
     this.username,
     this.email,

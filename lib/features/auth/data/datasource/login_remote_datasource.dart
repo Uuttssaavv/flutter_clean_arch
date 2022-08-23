@@ -2,7 +2,7 @@ import 'package:dartz/dartz.dart';
 import 'package:flutter/rendering.dart';
 import 'package:flutter_project/core/api.dart';
 import 'package:flutter_project/core/service_locator.dart';
-import 'package:flutter_project/features/shared/failure.dart';
+import 'package:flutter_project/core/failure.dart';
 
 import '../models/user_model.dart';
 
@@ -19,8 +19,6 @@ class LoginRemoteDataSourceImpl implements LoginRemoteDataSource {
         '/login',
         data: user.toJson(),
       );
-      print(response.data);
-      print(response.statusCode);
       if (response.statusCode == 200) {
         return Right(User.fromJson(response.data));
       }
