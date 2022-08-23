@@ -17,7 +17,7 @@ class _HomepageScreenState extends State<HomepageScreen> {
   void initState() {
     super.initState();
     context.read<HomepageBloc>().add(
-          const HomepageGetUserEvent(),
+          const HomepageFetchDataEvent(),
         );
   }
 
@@ -25,14 +25,14 @@ class _HomepageScreenState extends State<HomepageScreen> {
   Widget build(BuildContext context) {
     return BlocConsumer<HomepageBloc, HomepageState>(
         listener: (context, state) {
-      if (state is HomepageUserLoadedState) {
-        context.read<HomepageBloc>().add(
-              const HomepageGetProductEvent(),
-            );
-      }
+      // if (state is HomepageUserLoadedState) {
+      //   context.read<HomepageBloc>().add(
+      //         const HomepageGetProductEvent(),
+      //       );
+      // }
     }, builder: (context, state) {
       return Scaffold(
-        drawer: state is HomepageUserLoadedState
+        drawer: state is HomepageLoadedState
             ? HomepageDrawer(user: state.user)
             : null,
         appBar: AppBar(
@@ -42,7 +42,7 @@ class _HomepageScreenState extends State<HomepageScreen> {
             ? const Center(
                 child: CircularProgressIndicator(),
               )
-            : state is HomepageProductLoadedState
+            : state is HomepageLoadedState
                 ? ListView.separated(
                     separatorBuilder: (_, __) => const Divider(),
                     itemCount: state.productList.length,

@@ -7,9 +7,14 @@ class HomepageDrawer extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Drawer(
-      child: ListView(
+      child: Column(
         children: [
           UserAccountsDrawerHeader(
+            currentAccountPicture: CircleAvatar(
+              backgroundImage: NetworkImage(
+                user.image,
+              ),
+            ),
             accountName: Text(user.firstName),
             accountEmail: Text(user.email),
           )

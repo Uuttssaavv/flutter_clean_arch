@@ -5,8 +5,7 @@ part 'homepage_state.freezed.dart';
 
 @freezed
 abstract class HomepageEvent with _$HomepageEvent {
-  const factory HomepageEvent.onGetUser() = HomepageGetUserEvent;
-  const factory HomepageEvent.onGetProducts() = HomepageGetProductEvent;
+  const factory HomepageEvent.onGetUser() = HomepageFetchDataEvent;
 }
 
 @freezed
@@ -14,10 +13,8 @@ abstract class HomepageState with _$HomepageState {
   const factory HomepageState.initial() = HomepageInitialState;
   const factory HomepageState.loading() = HomepageLoadingState;
   const factory HomepageState.error(String message) = HomepageErrorState;
-  const factory HomepageState.userLoadedState({
-    required User user,
-  }) = HomepageUserLoadedState;
-  const factory HomepageState.productLoadedState({
+  const factory HomepageState.loadedState({
     required ProductList productList,
-  }) = HomepageProductLoadedState;
+    required User user,
+  }) = HomepageLoadedState;
 }

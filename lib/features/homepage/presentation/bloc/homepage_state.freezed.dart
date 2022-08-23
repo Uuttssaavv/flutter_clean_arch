@@ -19,38 +19,32 @@ mixin _$HomepageEvent {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() onGetUser,
-    required TResult Function() onGetProducts,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? onGetUser,
-    TResult Function()? onGetProducts,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? onGetUser,
-    TResult Function()? onGetProducts,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(HomepageGetUserEvent value) onGetUser,
-    required TResult Function(HomepageGetProductEvent value) onGetProducts,
+    required TResult Function(HomepageFetchDataEvent value) onGetUser,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(HomepageGetUserEvent value)? onGetUser,
-    TResult Function(HomepageGetProductEvent value)? onGetProducts,
+    TResult Function(HomepageFetchDataEvent value)? onGetUser,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(HomepageGetUserEvent value)? onGetUser,
-    TResult Function(HomepageGetProductEvent value)? onGetProducts,
+    TResult Function(HomepageFetchDataEvent value)? onGetUser,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -74,28 +68,29 @@ class _$HomepageEventCopyWithImpl<$Res>
 }
 
 /// @nodoc
-abstract class _$$HomepageGetUserEventCopyWith<$Res> {
-  factory _$$HomepageGetUserEventCopyWith(_$HomepageGetUserEvent value,
-          $Res Function(_$HomepageGetUserEvent) then) =
-      __$$HomepageGetUserEventCopyWithImpl<$Res>;
+abstract class _$$HomepageFetchDataEventCopyWith<$Res> {
+  factory _$$HomepageFetchDataEventCopyWith(_$HomepageFetchDataEvent value,
+          $Res Function(_$HomepageFetchDataEvent) then) =
+      __$$HomepageFetchDataEventCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$HomepageGetUserEventCopyWithImpl<$Res>
+class __$$HomepageFetchDataEventCopyWithImpl<$Res>
     extends _$HomepageEventCopyWithImpl<$Res>
-    implements _$$HomepageGetUserEventCopyWith<$Res> {
-  __$$HomepageGetUserEventCopyWithImpl(_$HomepageGetUserEvent _value,
-      $Res Function(_$HomepageGetUserEvent) _then)
-      : super(_value, (v) => _then(v as _$HomepageGetUserEvent));
+    implements _$$HomepageFetchDataEventCopyWith<$Res> {
+  __$$HomepageFetchDataEventCopyWithImpl(_$HomepageFetchDataEvent _value,
+      $Res Function(_$HomepageFetchDataEvent) _then)
+      : super(_value, (v) => _then(v as _$HomepageFetchDataEvent));
 
   @override
-  _$HomepageGetUserEvent get _value => super._value as _$HomepageGetUserEvent;
+  _$HomepageFetchDataEvent get _value =>
+      super._value as _$HomepageFetchDataEvent;
 }
 
 /// @nodoc
 
-class _$HomepageGetUserEvent implements HomepageGetUserEvent {
-  const _$HomepageGetUserEvent();
+class _$HomepageFetchDataEvent implements HomepageFetchDataEvent {
+  const _$HomepageFetchDataEvent();
 
   @override
   String toString() {
@@ -105,7 +100,7 @@ class _$HomepageGetUserEvent implements HomepageGetUserEvent {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$HomepageGetUserEvent);
+        (other.runtimeType == runtimeType && other is _$HomepageFetchDataEvent);
   }
 
   @override
@@ -115,7 +110,6 @@ class _$HomepageGetUserEvent implements HomepageGetUserEvent {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() onGetUser,
-    required TResult Function() onGetProducts,
   }) {
     return onGetUser();
   }
@@ -124,7 +118,6 @@ class _$HomepageGetUserEvent implements HomepageGetUserEvent {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? onGetUser,
-    TResult Function()? onGetProducts,
   }) {
     return onGetUser?.call();
   }
@@ -133,7 +126,6 @@ class _$HomepageGetUserEvent implements HomepageGetUserEvent {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? onGetUser,
-    TResult Function()? onGetProducts,
     required TResult orElse(),
   }) {
     if (onGetUser != null) {
@@ -145,8 +137,7 @@ class _$HomepageGetUserEvent implements HomepageGetUserEvent {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(HomepageGetUserEvent value) onGetUser,
-    required TResult Function(HomepageGetProductEvent value) onGetProducts,
+    required TResult Function(HomepageFetchDataEvent value) onGetUser,
   }) {
     return onGetUser(this);
   }
@@ -154,8 +145,7 @@ class _$HomepageGetUserEvent implements HomepageGetUserEvent {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(HomepageGetUserEvent value)? onGetUser,
-    TResult Function(HomepageGetProductEvent value)? onGetProducts,
+    TResult Function(HomepageFetchDataEvent value)? onGetUser,
   }) {
     return onGetUser?.call(this);
   }
@@ -163,8 +153,7 @@ class _$HomepageGetUserEvent implements HomepageGetUserEvent {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(HomepageGetUserEvent value)? onGetUser,
-    TResult Function(HomepageGetProductEvent value)? onGetProducts,
+    TResult Function(HomepageFetchDataEvent value)? onGetUser,
     required TResult orElse(),
   }) {
     if (onGetUser != null) {
@@ -174,115 +163,8 @@ class _$HomepageGetUserEvent implements HomepageGetUserEvent {
   }
 }
 
-abstract class HomepageGetUserEvent implements HomepageEvent {
-  const factory HomepageGetUserEvent() = _$HomepageGetUserEvent;
-}
-
-/// @nodoc
-abstract class _$$HomepageGetProductEventCopyWith<$Res> {
-  factory _$$HomepageGetProductEventCopyWith(_$HomepageGetProductEvent value,
-          $Res Function(_$HomepageGetProductEvent) then) =
-      __$$HomepageGetProductEventCopyWithImpl<$Res>;
-}
-
-/// @nodoc
-class __$$HomepageGetProductEventCopyWithImpl<$Res>
-    extends _$HomepageEventCopyWithImpl<$Res>
-    implements _$$HomepageGetProductEventCopyWith<$Res> {
-  __$$HomepageGetProductEventCopyWithImpl(_$HomepageGetProductEvent _value,
-      $Res Function(_$HomepageGetProductEvent) _then)
-      : super(_value, (v) => _then(v as _$HomepageGetProductEvent));
-
-  @override
-  _$HomepageGetProductEvent get _value =>
-      super._value as _$HomepageGetProductEvent;
-}
-
-/// @nodoc
-
-class _$HomepageGetProductEvent implements HomepageGetProductEvent {
-  const _$HomepageGetProductEvent();
-
-  @override
-  String toString() {
-    return 'HomepageEvent.onGetProducts()';
-  }
-
-  @override
-  bool operator ==(dynamic other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$HomepageGetProductEvent);
-  }
-
-  @override
-  int get hashCode => runtimeType.hashCode;
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function() onGetUser,
-    required TResult Function() onGetProducts,
-  }) {
-    return onGetProducts();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? onGetUser,
-    TResult Function()? onGetProducts,
-  }) {
-    return onGetProducts?.call();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? onGetUser,
-    TResult Function()? onGetProducts,
-    required TResult orElse(),
-  }) {
-    if (onGetProducts != null) {
-      return onGetProducts();
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(HomepageGetUserEvent value) onGetUser,
-    required TResult Function(HomepageGetProductEvent value) onGetProducts,
-  }) {
-    return onGetProducts(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(HomepageGetUserEvent value)? onGetUser,
-    TResult Function(HomepageGetProductEvent value)? onGetProducts,
-  }) {
-    return onGetProducts?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(HomepageGetUserEvent value)? onGetUser,
-    TResult Function(HomepageGetProductEvent value)? onGetProducts,
-    required TResult orElse(),
-  }) {
-    if (onGetProducts != null) {
-      return onGetProducts(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class HomepageGetProductEvent implements HomepageEvent {
-  const factory HomepageGetProductEvent() = _$HomepageGetProductEvent;
+abstract class HomepageFetchDataEvent implements HomepageEvent {
+  const factory HomepageFetchDataEvent() = _$HomepageFetchDataEvent;
 }
 
 /// @nodoc
@@ -292,8 +174,7 @@ mixin _$HomepageState {
     required TResult Function() initial,
     required TResult Function() loading,
     required TResult Function(String message) error,
-    required TResult Function(User user) userLoadedState,
-    required TResult Function(List<Product> productList) productLoadedState,
+    required TResult Function(List<Product> productList, User user) loadedState,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -301,8 +182,7 @@ mixin _$HomepageState {
     TResult Function()? initial,
     TResult Function()? loading,
     TResult Function(String message)? error,
-    TResult Function(User user)? userLoadedState,
-    TResult Function(List<Product> productList)? productLoadedState,
+    TResult Function(List<Product> productList, User user)? loadedState,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -310,8 +190,7 @@ mixin _$HomepageState {
     TResult Function()? initial,
     TResult Function()? loading,
     TResult Function(String message)? error,
-    TResult Function(User user)? userLoadedState,
-    TResult Function(List<Product> productList)? productLoadedState,
+    TResult Function(List<Product> productList, User user)? loadedState,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -320,9 +199,7 @@ mixin _$HomepageState {
     required TResult Function(HomepageInitialState value) initial,
     required TResult Function(HomepageLoadingState value) loading,
     required TResult Function(HomepageErrorState value) error,
-    required TResult Function(HomepageUserLoadedState value) userLoadedState,
-    required TResult Function(HomepageProductLoadedState value)
-        productLoadedState,
+    required TResult Function(HomepageLoadedState value) loadedState,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -330,8 +207,7 @@ mixin _$HomepageState {
     TResult Function(HomepageInitialState value)? initial,
     TResult Function(HomepageLoadingState value)? loading,
     TResult Function(HomepageErrorState value)? error,
-    TResult Function(HomepageUserLoadedState value)? userLoadedState,
-    TResult Function(HomepageProductLoadedState value)? productLoadedState,
+    TResult Function(HomepageLoadedState value)? loadedState,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -339,8 +215,7 @@ mixin _$HomepageState {
     TResult Function(HomepageInitialState value)? initial,
     TResult Function(HomepageLoadingState value)? loading,
     TResult Function(HomepageErrorState value)? error,
-    TResult Function(HomepageUserLoadedState value)? userLoadedState,
-    TResult Function(HomepageProductLoadedState value)? productLoadedState,
+    TResult Function(HomepageLoadedState value)? loadedState,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -407,8 +282,7 @@ class _$HomepageInitialState implements HomepageInitialState {
     required TResult Function() initial,
     required TResult Function() loading,
     required TResult Function(String message) error,
-    required TResult Function(User user) userLoadedState,
-    required TResult Function(List<Product> productList) productLoadedState,
+    required TResult Function(List<Product> productList, User user) loadedState,
   }) {
     return initial();
   }
@@ -419,8 +293,7 @@ class _$HomepageInitialState implements HomepageInitialState {
     TResult Function()? initial,
     TResult Function()? loading,
     TResult Function(String message)? error,
-    TResult Function(User user)? userLoadedState,
-    TResult Function(List<Product> productList)? productLoadedState,
+    TResult Function(List<Product> productList, User user)? loadedState,
   }) {
     return initial?.call();
   }
@@ -431,8 +304,7 @@ class _$HomepageInitialState implements HomepageInitialState {
     TResult Function()? initial,
     TResult Function()? loading,
     TResult Function(String message)? error,
-    TResult Function(User user)? userLoadedState,
-    TResult Function(List<Product> productList)? productLoadedState,
+    TResult Function(List<Product> productList, User user)? loadedState,
     required TResult orElse(),
   }) {
     if (initial != null) {
@@ -447,9 +319,7 @@ class _$HomepageInitialState implements HomepageInitialState {
     required TResult Function(HomepageInitialState value) initial,
     required TResult Function(HomepageLoadingState value) loading,
     required TResult Function(HomepageErrorState value) error,
-    required TResult Function(HomepageUserLoadedState value) userLoadedState,
-    required TResult Function(HomepageProductLoadedState value)
-        productLoadedState,
+    required TResult Function(HomepageLoadedState value) loadedState,
   }) {
     return initial(this);
   }
@@ -460,8 +330,7 @@ class _$HomepageInitialState implements HomepageInitialState {
     TResult Function(HomepageInitialState value)? initial,
     TResult Function(HomepageLoadingState value)? loading,
     TResult Function(HomepageErrorState value)? error,
-    TResult Function(HomepageUserLoadedState value)? userLoadedState,
-    TResult Function(HomepageProductLoadedState value)? productLoadedState,
+    TResult Function(HomepageLoadedState value)? loadedState,
   }) {
     return initial?.call(this);
   }
@@ -472,8 +341,7 @@ class _$HomepageInitialState implements HomepageInitialState {
     TResult Function(HomepageInitialState value)? initial,
     TResult Function(HomepageLoadingState value)? loading,
     TResult Function(HomepageErrorState value)? error,
-    TResult Function(HomepageUserLoadedState value)? userLoadedState,
-    TResult Function(HomepageProductLoadedState value)? productLoadedState,
+    TResult Function(HomepageLoadedState value)? loadedState,
     required TResult orElse(),
   }) {
     if (initial != null) {
@@ -531,8 +399,7 @@ class _$HomepageLoadingState implements HomepageLoadingState {
     required TResult Function() initial,
     required TResult Function() loading,
     required TResult Function(String message) error,
-    required TResult Function(User user) userLoadedState,
-    required TResult Function(List<Product> productList) productLoadedState,
+    required TResult Function(List<Product> productList, User user) loadedState,
   }) {
     return loading();
   }
@@ -543,8 +410,7 @@ class _$HomepageLoadingState implements HomepageLoadingState {
     TResult Function()? initial,
     TResult Function()? loading,
     TResult Function(String message)? error,
-    TResult Function(User user)? userLoadedState,
-    TResult Function(List<Product> productList)? productLoadedState,
+    TResult Function(List<Product> productList, User user)? loadedState,
   }) {
     return loading?.call();
   }
@@ -555,8 +421,7 @@ class _$HomepageLoadingState implements HomepageLoadingState {
     TResult Function()? initial,
     TResult Function()? loading,
     TResult Function(String message)? error,
-    TResult Function(User user)? userLoadedState,
-    TResult Function(List<Product> productList)? productLoadedState,
+    TResult Function(List<Product> productList, User user)? loadedState,
     required TResult orElse(),
   }) {
     if (loading != null) {
@@ -571,9 +436,7 @@ class _$HomepageLoadingState implements HomepageLoadingState {
     required TResult Function(HomepageInitialState value) initial,
     required TResult Function(HomepageLoadingState value) loading,
     required TResult Function(HomepageErrorState value) error,
-    required TResult Function(HomepageUserLoadedState value) userLoadedState,
-    required TResult Function(HomepageProductLoadedState value)
-        productLoadedState,
+    required TResult Function(HomepageLoadedState value) loadedState,
   }) {
     return loading(this);
   }
@@ -584,8 +447,7 @@ class _$HomepageLoadingState implements HomepageLoadingState {
     TResult Function(HomepageInitialState value)? initial,
     TResult Function(HomepageLoadingState value)? loading,
     TResult Function(HomepageErrorState value)? error,
-    TResult Function(HomepageUserLoadedState value)? userLoadedState,
-    TResult Function(HomepageProductLoadedState value)? productLoadedState,
+    TResult Function(HomepageLoadedState value)? loadedState,
   }) {
     return loading?.call(this);
   }
@@ -596,8 +458,7 @@ class _$HomepageLoadingState implements HomepageLoadingState {
     TResult Function(HomepageInitialState value)? initial,
     TResult Function(HomepageLoadingState value)? loading,
     TResult Function(HomepageErrorState value)? error,
-    TResult Function(HomepageUserLoadedState value)? userLoadedState,
-    TResult Function(HomepageProductLoadedState value)? productLoadedState,
+    TResult Function(HomepageLoadedState value)? loadedState,
     required TResult orElse(),
   }) {
     if (loading != null) {
@@ -680,8 +541,7 @@ class _$HomepageErrorState implements HomepageErrorState {
     required TResult Function() initial,
     required TResult Function() loading,
     required TResult Function(String message) error,
-    required TResult Function(User user) userLoadedState,
-    required TResult Function(List<Product> productList) productLoadedState,
+    required TResult Function(List<Product> productList, User user) loadedState,
   }) {
     return error(message);
   }
@@ -692,8 +552,7 @@ class _$HomepageErrorState implements HomepageErrorState {
     TResult Function()? initial,
     TResult Function()? loading,
     TResult Function(String message)? error,
-    TResult Function(User user)? userLoadedState,
-    TResult Function(List<Product> productList)? productLoadedState,
+    TResult Function(List<Product> productList, User user)? loadedState,
   }) {
     return error?.call(message);
   }
@@ -704,8 +563,7 @@ class _$HomepageErrorState implements HomepageErrorState {
     TResult Function()? initial,
     TResult Function()? loading,
     TResult Function(String message)? error,
-    TResult Function(User user)? userLoadedState,
-    TResult Function(List<Product> productList)? productLoadedState,
+    TResult Function(List<Product> productList, User user)? loadedState,
     required TResult orElse(),
   }) {
     if (error != null) {
@@ -720,9 +578,7 @@ class _$HomepageErrorState implements HomepageErrorState {
     required TResult Function(HomepageInitialState value) initial,
     required TResult Function(HomepageLoadingState value) loading,
     required TResult Function(HomepageErrorState value) error,
-    required TResult Function(HomepageUserLoadedState value) userLoadedState,
-    required TResult Function(HomepageProductLoadedState value)
-        productLoadedState,
+    required TResult Function(HomepageLoadedState value) loadedState,
   }) {
     return error(this);
   }
@@ -733,8 +589,7 @@ class _$HomepageErrorState implements HomepageErrorState {
     TResult Function(HomepageInitialState value)? initial,
     TResult Function(HomepageLoadingState value)? loading,
     TResult Function(HomepageErrorState value)? error,
-    TResult Function(HomepageUserLoadedState value)? userLoadedState,
-    TResult Function(HomepageProductLoadedState value)? productLoadedState,
+    TResult Function(HomepageLoadedState value)? loadedState,
   }) {
     return error?.call(this);
   }
@@ -745,8 +600,7 @@ class _$HomepageErrorState implements HomepageErrorState {
     TResult Function(HomepageInitialState value)? initial,
     TResult Function(HomepageLoadingState value)? loading,
     TResult Function(HomepageErrorState value)? error,
-    TResult Function(HomepageUserLoadedState value)? userLoadedState,
-    TResult Function(HomepageProductLoadedState value)? productLoadedState,
+    TResult Function(HomepageLoadedState value)? loadedState,
     required TResult orElse(),
   }) {
     if (error != null) {
@@ -766,32 +620,36 @@ abstract class HomepageErrorState implements HomepageState {
 }
 
 /// @nodoc
-abstract class _$$HomepageUserLoadedStateCopyWith<$Res> {
-  factory _$$HomepageUserLoadedStateCopyWith(_$HomepageUserLoadedState value,
-          $Res Function(_$HomepageUserLoadedState) then) =
-      __$$HomepageUserLoadedStateCopyWithImpl<$Res>;
-  $Res call({User user});
+abstract class _$$HomepageLoadedStateCopyWith<$Res> {
+  factory _$$HomepageLoadedStateCopyWith(_$HomepageLoadedState value,
+          $Res Function(_$HomepageLoadedState) then) =
+      __$$HomepageLoadedStateCopyWithImpl<$Res>;
+  $Res call({List<Product> productList, User user});
 
   $UserCopyWith<$Res> get user;
 }
 
 /// @nodoc
-class __$$HomepageUserLoadedStateCopyWithImpl<$Res>
+class __$$HomepageLoadedStateCopyWithImpl<$Res>
     extends _$HomepageStateCopyWithImpl<$Res>
-    implements _$$HomepageUserLoadedStateCopyWith<$Res> {
-  __$$HomepageUserLoadedStateCopyWithImpl(_$HomepageUserLoadedState _value,
-      $Res Function(_$HomepageUserLoadedState) _then)
-      : super(_value, (v) => _then(v as _$HomepageUserLoadedState));
+    implements _$$HomepageLoadedStateCopyWith<$Res> {
+  __$$HomepageLoadedStateCopyWithImpl(
+      _$HomepageLoadedState _value, $Res Function(_$HomepageLoadedState) _then)
+      : super(_value, (v) => _then(v as _$HomepageLoadedState));
 
   @override
-  _$HomepageUserLoadedState get _value =>
-      super._value as _$HomepageUserLoadedState;
+  _$HomepageLoadedState get _value => super._value as _$HomepageLoadedState;
 
   @override
   $Res call({
+    Object? productList = freezed,
     Object? user = freezed,
   }) {
-    return _then(_$HomepageUserLoadedState(
+    return _then(_$HomepageLoadedState(
+      productList: productList == freezed
+          ? _value._productList
+          : productList // ignore: cast_nullable_to_non_nullable
+              as List<Product>,
       user: user == freezed
           ? _value.user
           : user // ignore: cast_nullable_to_non_nullable
@@ -809,166 +667,9 @@ class __$$HomepageUserLoadedStateCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$HomepageUserLoadedState implements HomepageUserLoadedState {
-  const _$HomepageUserLoadedState({required this.user});
-
-  @override
-  final User user;
-
-  @override
-  String toString() {
-    return 'HomepageState.userLoadedState(user: $user)';
-  }
-
-  @override
-  bool operator ==(dynamic other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$HomepageUserLoadedState &&
-            const DeepCollectionEquality().equals(other.user, user));
-  }
-
-  @override
-  int get hashCode =>
-      Object.hash(runtimeType, const DeepCollectionEquality().hash(user));
-
-  @JsonKey(ignore: true)
-  @override
-  _$$HomepageUserLoadedStateCopyWith<_$HomepageUserLoadedState> get copyWith =>
-      __$$HomepageUserLoadedStateCopyWithImpl<_$HomepageUserLoadedState>(
-          this, _$identity);
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function() initial,
-    required TResult Function() loading,
-    required TResult Function(String message) error,
-    required TResult Function(User user) userLoadedState,
-    required TResult Function(List<Product> productList) productLoadedState,
-  }) {
-    return userLoadedState(user);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? initial,
-    TResult Function()? loading,
-    TResult Function(String message)? error,
-    TResult Function(User user)? userLoadedState,
-    TResult Function(List<Product> productList)? productLoadedState,
-  }) {
-    return userLoadedState?.call(user);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? initial,
-    TResult Function()? loading,
-    TResult Function(String message)? error,
-    TResult Function(User user)? userLoadedState,
-    TResult Function(List<Product> productList)? productLoadedState,
-    required TResult orElse(),
-  }) {
-    if (userLoadedState != null) {
-      return userLoadedState(user);
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(HomepageInitialState value) initial,
-    required TResult Function(HomepageLoadingState value) loading,
-    required TResult Function(HomepageErrorState value) error,
-    required TResult Function(HomepageUserLoadedState value) userLoadedState,
-    required TResult Function(HomepageProductLoadedState value)
-        productLoadedState,
-  }) {
-    return userLoadedState(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(HomepageInitialState value)? initial,
-    TResult Function(HomepageLoadingState value)? loading,
-    TResult Function(HomepageErrorState value)? error,
-    TResult Function(HomepageUserLoadedState value)? userLoadedState,
-    TResult Function(HomepageProductLoadedState value)? productLoadedState,
-  }) {
-    return userLoadedState?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(HomepageInitialState value)? initial,
-    TResult Function(HomepageLoadingState value)? loading,
-    TResult Function(HomepageErrorState value)? error,
-    TResult Function(HomepageUserLoadedState value)? userLoadedState,
-    TResult Function(HomepageProductLoadedState value)? productLoadedState,
-    required TResult orElse(),
-  }) {
-    if (userLoadedState != null) {
-      return userLoadedState(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class HomepageUserLoadedState implements HomepageState {
-  const factory HomepageUserLoadedState({required final User user}) =
-      _$HomepageUserLoadedState;
-
-  User get user;
-  @JsonKey(ignore: true)
-  _$$HomepageUserLoadedStateCopyWith<_$HomepageUserLoadedState> get copyWith =>
-      throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-abstract class _$$HomepageProductLoadedStateCopyWith<$Res> {
-  factory _$$HomepageProductLoadedStateCopyWith(
-          _$HomepageProductLoadedState value,
-          $Res Function(_$HomepageProductLoadedState) then) =
-      __$$HomepageProductLoadedStateCopyWithImpl<$Res>;
-  $Res call({List<Product> productList});
-}
-
-/// @nodoc
-class __$$HomepageProductLoadedStateCopyWithImpl<$Res>
-    extends _$HomepageStateCopyWithImpl<$Res>
-    implements _$$HomepageProductLoadedStateCopyWith<$Res> {
-  __$$HomepageProductLoadedStateCopyWithImpl(
-      _$HomepageProductLoadedState _value,
-      $Res Function(_$HomepageProductLoadedState) _then)
-      : super(_value, (v) => _then(v as _$HomepageProductLoadedState));
-
-  @override
-  _$HomepageProductLoadedState get _value =>
-      super._value as _$HomepageProductLoadedState;
-
-  @override
-  $Res call({
-    Object? productList = freezed,
-  }) {
-    return _then(_$HomepageProductLoadedState(
-      productList: productList == freezed
-          ? _value._productList
-          : productList // ignore: cast_nullable_to_non_nullable
-              as List<Product>,
-    ));
-  }
-}
-
-/// @nodoc
-
-class _$HomepageProductLoadedState implements HomepageProductLoadedState {
-  const _$HomepageProductLoadedState({required final List<Product> productList})
+class _$HomepageLoadedState implements HomepageLoadedState {
+  const _$HomepageLoadedState(
+      {required final List<Product> productList, required this.user})
       : _productList = productList;
 
   final List<Product> _productList;
@@ -979,28 +680,34 @@ class _$HomepageProductLoadedState implements HomepageProductLoadedState {
   }
 
   @override
+  final User user;
+
+  @override
   String toString() {
-    return 'HomepageState.productLoadedState(productList: $productList)';
+    return 'HomepageState.loadedState(productList: $productList, user: $user)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$HomepageProductLoadedState &&
+            other is _$HomepageLoadedState &&
             const DeepCollectionEquality()
-                .equals(other._productList, _productList));
+                .equals(other._productList, _productList) &&
+            const DeepCollectionEquality().equals(other.user, user));
   }
 
   @override
   int get hashCode => Object.hash(
-      runtimeType, const DeepCollectionEquality().hash(_productList));
+      runtimeType,
+      const DeepCollectionEquality().hash(_productList),
+      const DeepCollectionEquality().hash(user));
 
   @JsonKey(ignore: true)
   @override
-  _$$HomepageProductLoadedStateCopyWith<_$HomepageProductLoadedState>
-      get copyWith => __$$HomepageProductLoadedStateCopyWithImpl<
-          _$HomepageProductLoadedState>(this, _$identity);
+  _$$HomepageLoadedStateCopyWith<_$HomepageLoadedState> get copyWith =>
+      __$$HomepageLoadedStateCopyWithImpl<_$HomepageLoadedState>(
+          this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -1008,10 +715,9 @@ class _$HomepageProductLoadedState implements HomepageProductLoadedState {
     required TResult Function() initial,
     required TResult Function() loading,
     required TResult Function(String message) error,
-    required TResult Function(User user) userLoadedState,
-    required TResult Function(List<Product> productList) productLoadedState,
+    required TResult Function(List<Product> productList, User user) loadedState,
   }) {
-    return productLoadedState(productList);
+    return loadedState(productList, user);
   }
 
   @override
@@ -1020,10 +726,9 @@ class _$HomepageProductLoadedState implements HomepageProductLoadedState {
     TResult Function()? initial,
     TResult Function()? loading,
     TResult Function(String message)? error,
-    TResult Function(User user)? userLoadedState,
-    TResult Function(List<Product> productList)? productLoadedState,
+    TResult Function(List<Product> productList, User user)? loadedState,
   }) {
-    return productLoadedState?.call(productList);
+    return loadedState?.call(productList, user);
   }
 
   @override
@@ -1032,12 +737,11 @@ class _$HomepageProductLoadedState implements HomepageProductLoadedState {
     TResult Function()? initial,
     TResult Function()? loading,
     TResult Function(String message)? error,
-    TResult Function(User user)? userLoadedState,
-    TResult Function(List<Product> productList)? productLoadedState,
+    TResult Function(List<Product> productList, User user)? loadedState,
     required TResult orElse(),
   }) {
-    if (productLoadedState != null) {
-      return productLoadedState(productList);
+    if (loadedState != null) {
+      return loadedState(productList, user);
     }
     return orElse();
   }
@@ -1048,11 +752,9 @@ class _$HomepageProductLoadedState implements HomepageProductLoadedState {
     required TResult Function(HomepageInitialState value) initial,
     required TResult Function(HomepageLoadingState value) loading,
     required TResult Function(HomepageErrorState value) error,
-    required TResult Function(HomepageUserLoadedState value) userLoadedState,
-    required TResult Function(HomepageProductLoadedState value)
-        productLoadedState,
+    required TResult Function(HomepageLoadedState value) loadedState,
   }) {
-    return productLoadedState(this);
+    return loadedState(this);
   }
 
   @override
@@ -1061,10 +763,9 @@ class _$HomepageProductLoadedState implements HomepageProductLoadedState {
     TResult Function(HomepageInitialState value)? initial,
     TResult Function(HomepageLoadingState value)? loading,
     TResult Function(HomepageErrorState value)? error,
-    TResult Function(HomepageUserLoadedState value)? userLoadedState,
-    TResult Function(HomepageProductLoadedState value)? productLoadedState,
+    TResult Function(HomepageLoadedState value)? loadedState,
   }) {
-    return productLoadedState?.call(this);
+    return loadedState?.call(this);
   }
 
   @override
@@ -1073,24 +774,24 @@ class _$HomepageProductLoadedState implements HomepageProductLoadedState {
     TResult Function(HomepageInitialState value)? initial,
     TResult Function(HomepageLoadingState value)? loading,
     TResult Function(HomepageErrorState value)? error,
-    TResult Function(HomepageUserLoadedState value)? userLoadedState,
-    TResult Function(HomepageProductLoadedState value)? productLoadedState,
+    TResult Function(HomepageLoadedState value)? loadedState,
     required TResult orElse(),
   }) {
-    if (productLoadedState != null) {
-      return productLoadedState(this);
+    if (loadedState != null) {
+      return loadedState(this);
     }
     return orElse();
   }
 }
 
-abstract class HomepageProductLoadedState implements HomepageState {
-  const factory HomepageProductLoadedState(
-          {required final List<Product> productList}) =
-      _$HomepageProductLoadedState;
+abstract class HomepageLoadedState implements HomepageState {
+  const factory HomepageLoadedState(
+      {required final List<Product> productList,
+      required final User user}) = _$HomepageLoadedState;
 
   List<Product> get productList;
+  User get user;
   @JsonKey(ignore: true)
-  _$$HomepageProductLoadedStateCopyWith<_$HomepageProductLoadedState>
-      get copyWith => throw _privateConstructorUsedError;
+  _$$HomepageLoadedStateCopyWith<_$HomepageLoadedState> get copyWith =>
+      throw _privateConstructorUsedError;
 }
