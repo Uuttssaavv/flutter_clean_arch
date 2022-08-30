@@ -1,3 +1,4 @@
+import 'package:dio/dio.dart';
 import 'package:flutter_project/features/auth/data/datasource/login_remote_datasource.dart';
 import 'package:flutter_project/features/auth/domain/repository/authentication_user_repository.dart';
 import 'package:flutter_project/features/auth/domain/usecases/authentication_usecase.dart';
@@ -13,10 +14,9 @@ import 'package:shared_preferences/shared_preferences.dart';
 
 import '../features/auth/data/repository/login_user_repository.dart';
 import '../services/user_cache_service.dart';
-import 'api.dart';
 
 final serviceLocator = GetIt.instance;
-void setUpServiceLocator() async {
+Future<void> setUpServiceLocator() async {
   //check if user logged in or not
   serviceLocator.registerFactory<CheckUserLoginStatus>(
     () => CheckUserLoginStatusImpl(),
@@ -31,8 +31,6 @@ void setUpServiceLocator() async {
   //repositories
   serviceLocator
       .registerFactory<LoginUserRepository>(() => LoginUserRepositoryImpl());
-//dio
-  serviceLocator.registerLazySingleton<Request>(() => Request());
 //homepage user
 //usecase
   serviceLocator
@@ -57,7 +55,8 @@ void setUpServiceLocator() async {
   //services
   serviceLocator.registerSingleton<UserCacheService>(UserCacheService());
   //external
-
   final sharedPreferences = await SharedPreferences.getInstance();
   serviceLocator.registerFactory<SharedPreferences>(() => sharedPreferences);
+  //dio
+  serviceLocator.registerSingleton<Dio>(Dio());
 }
