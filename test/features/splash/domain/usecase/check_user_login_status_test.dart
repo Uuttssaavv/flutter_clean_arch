@@ -20,7 +20,7 @@ void main() {
 
   final User user = User.fromJson(jsonDecode(fixture('user_response.json')));
   group(
-    'check user cache status',
+    'check user cache status ',
     () {
       test(
         'should return true when there is cached user',
@@ -31,6 +31,17 @@ void main() {
           final loggedIn = await userUsecase.checkIfUserLoggedIn();
           //assert
           expect(loggedIn, true);
+        },
+      );
+      test(
+        'should return false when there no user',
+        () async {
+          //arrange
+          when(() => mockCacheService.getUser()).thenAnswer((_) async => null);
+          // act
+          final loggedIn = await userUsecase.checkIfUserLoggedIn();
+          //assert
+          expect(loggedIn, false);
         },
       );
     },
