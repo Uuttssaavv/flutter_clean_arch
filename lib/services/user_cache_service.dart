@@ -1,5 +1,6 @@
 import 'dart:convert';
 
+import 'package:flutter_project/core/service_locator.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 import '../features/auth/data/models/user_model.dart';
@@ -9,8 +10,8 @@ const String _CACHE_KEY = 'usercache';
 class UserCacheService {
   User? _user;
   User? get user => _user;
-  final SharedPreferences sharedPrefs;
-  UserCacheService(this.sharedPrefs) {
+  SharedPreferences get sharedPrefs => serviceLocator<SharedPreferences>();
+  UserCacheService() {
     _getUser();
   }
   Future<bool> saveUser(User user) async {

@@ -55,7 +55,9 @@ void setUpServiceLocator() async {
       () => ProductsRemoteDataSourceImpl());
 
   //services
+  serviceLocator.registerSingleton<UserCacheService>(UserCacheService());
+  //external
+
   final sharedPreferences = await SharedPreferences.getInstance();
-  serviceLocator
-      .registerSingleton<UserCacheService>(UserCacheService(sharedPreferences));
+  serviceLocator.registerFactory<SharedPreferences>(() => sharedPreferences);
 }
