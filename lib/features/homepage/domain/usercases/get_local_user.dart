@@ -12,7 +12,7 @@ class GetLocalUserUsecase {
     if (response.isRight()) {
       final responseUser = response.getOrElse(() => User());
       //persist user authorization in request
-      serviceLocator<Request>().setToken(responseUser.token);
+      Request.updateAuthorization(responseUser.token);
     }
 
     return response;

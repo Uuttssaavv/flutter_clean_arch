@@ -12,8 +12,7 @@ class LoginUserUsecase {
         await serviceLocator<LoginUserRepository>().login(user: user);
     if (response.isRight()) {
       final remoteUser = response.getOrElse(() => User());
-      final requestLocator = serviceLocator<Request>();
-      requestLocator.setToken(
+      Request.updateAuthorization(
         remoteUser.token,
       );
       await serviceLocator<UserCacheService>().saveUser(remoteUser);

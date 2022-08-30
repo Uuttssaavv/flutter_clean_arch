@@ -1,4 +1,5 @@
 import 'package:dartz/dartz.dart';
+import 'package:dio/dio.dart';
 import 'package:flutter_project/core/api.dart';
 import 'package:flutter_project/core/failure.dart';
 import 'package:flutter_project/core/service_locator.dart';
@@ -12,7 +13,7 @@ class ProductsRemoteDataSourceImpl extends ProductsRemoteDataSource {
   @override
   Future<Either<Failure, ProductList>> getProductFromServer() async {
     try {
-      final dio = serviceLocator<Request>().dio;
+      final dio = serviceLocator<Dio>();
       final response = await dio.get('/products');
       if (response.statusCode == 200) {
         ProductList productList = [];
