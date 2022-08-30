@@ -9,10 +9,6 @@ class CheckUserLoginStatusImpl extends CheckUserLoginStatus {
   @override
   Future<bool> checkIfUserLoggedIn() async {
     final userService = serviceLocator<UserCacheService>();
-    if (userService.user != null) {
-      return true;
-    } else {
-      return false;
-    }
+    return userService.user != null;
   }
 }
