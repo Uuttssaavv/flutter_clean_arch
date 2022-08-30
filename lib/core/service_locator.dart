@@ -9,13 +9,14 @@ import 'package:flutter_project/features/homepage/domain/usercases/get_local_use
 import 'package:flutter_project/features/homepage/domain/usercases/get_products.dart';
 import 'package:flutter_project/features/splash/domain/usecase/check_user_login_status.dart';
 import 'package:get_it/get_it.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 import '../features/auth/data/repository/login_user_repository.dart';
 import '../services/user_cache_service.dart';
 import 'api.dart';
 
 final serviceLocator = GetIt.instance;
-void setUpServiceLocator() {
+void setUpServiceLocator() async {
   //check if user logged in or not
   serviceLocator.registerFactory<CheckUserLoginStatus>(
     () => CheckUserLoginStatusImpl(),
@@ -54,5 +55,7 @@ void setUpServiceLocator() {
       () => ProductsRemoteDataSourceImpl());
 
   //services
-  serviceLocator.registerSingleton<UserCacheService>(UserCacheService());
+  final sharedPreferences = await SharedPreferences.getInstance();
+  serviceLocator
+      .registerSingleton<UserCacheService>(UserCacheService(sharedPreferences));
 }
