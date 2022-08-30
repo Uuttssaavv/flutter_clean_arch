@@ -5,27 +5,27 @@ import 'package:shared_preferences/shared_preferences.dart';
 
 import '../features/auth/data/models/user_model.dart';
 
-const String _CACHE_KEY = 'usercache';
+const String USER_CACHE_KEY = 'usercache';
 
 class UserCacheService {
   User? _user;
   User? get user => _user;
   SharedPreferences get sharedPrefs => serviceLocator<SharedPreferences>();
   UserCacheService() {
-    _getUser();
+    getUser();
   }
   Future<bool> saveUser(User user) async {
     var map = user.toJson();
-    bool saved = await sharedPrefs.setString(_CACHE_KEY, jsonEncode(map));
+    bool saved = await sharedPrefs.setString(USER_CACHE_KEY, jsonEncode(map));
     if (saved) {
-      _user = await _getUser();
+      _user = await getUser();
     }
     return saved;
   }
 
-  Future<User?> _getUser() async {
+  Future<User?> getUser() async {
     User usr;
-    var userMap = sharedPrefs.getString(_CACHE_KEY);
+    var userMap = sharedPrefs.getString(USER_CACHE_KEY);
     if (userMap == null) {
       return null;
     }
@@ -36,6 +36,6 @@ class UserCacheService {
 
   Future<bool> deleteUser() async {
     _user = null;
-    return await sharedPrefs.remove(_CACHE_KEY);
+    return await sharedPrefs.remove(USER_CACHE_KEY);
   }
 }
