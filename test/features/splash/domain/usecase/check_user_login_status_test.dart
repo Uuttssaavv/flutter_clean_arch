@@ -46,6 +46,14 @@ void main() {
       );
     },
   );
+  test(
+    'should call get user method when checking user',
+    () async {
+      //arrange
+      await userUsecase.checkIfUserLoggedIn();
+      verify(() => mockCacheService.getUser());
+    },
+  );
 }
 
 class MockCacheService extends Mock implements UserCacheService {}
