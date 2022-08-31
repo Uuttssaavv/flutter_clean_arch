@@ -3,7 +3,7 @@ import 'dart:convert';
 import 'package:flutter_project/features/auth/data/models/user_model.dart';
 import 'package:flutter_test/flutter_test.dart';
 
-import '../../../fixtures/fixture.dart';
+import '../../../../fixtures/fixture.dart';
 
 void main() {
   final User user = User(firstName: 'Utsav', lastName: 'Ghimire');

@@ -8,7 +8,7 @@ import 'package:flutter_project/features/auth/data/datasource/login_remote_datas
 import 'package:flutter_project/features/auth/data/models/user_model.dart';
 import 'package:flutter_test/flutter_test.dart';
 
-import '../../../fixtures/fixture.dart';
+import '../../../../fixtures/fixture.dart';
 
 void main() {
   late FakeDio fakeDio;
