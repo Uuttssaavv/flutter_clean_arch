@@ -1,5 +1,5 @@
 import 'package:dartz/dartz.dart';
-import 'package:flutter_project/core/api.dart';
+import 'package:flutter_project/core/request.dart';
 import 'package:flutter_project/core/service_locator.dart';
 import 'package:flutter_project/features/homepage/data/models/user/user_model.dart';
 import 'package:flutter_project/features/homepage/domain/repository/homepage_repository.dart';
@@ -12,7 +12,7 @@ class GetLocalUserUsecase {
     if (response.isRight()) {
       final responseUser = response.getOrElse(() => User());
       //persist user authorization in request
-      Request.updateAuthorization(responseUser.token);
+      serviceLocator<Request>().updateAuthorization(responseUser.token);
     }
 
     return response;
