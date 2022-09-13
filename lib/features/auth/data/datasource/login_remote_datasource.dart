@@ -1,7 +1,6 @@
 import 'package:dartz/dartz.dart';
-import 'package:dio/dio.dart';
 import 'package:flutter/rendering.dart';
-import 'package:flutter_project/core/api.dart';
+import 'package:flutter_project/core/request.dart';
 import 'package:flutter_project/core/service_locator.dart';
 import 'package:flutter_project/core/failure.dart';
 
@@ -12,11 +11,11 @@ abstract class LoginRemoteDataSource {
 }
 
 class LoginRemoteDataSourceImpl implements LoginRemoteDataSource {
-  final dioLocator = serviceLocator<Dio>();
+  final Request request = serviceLocator<Request>();
   @override
   Future<Either<Failure, User>> loginUser({required User user}) async {
     try {
-      final response = await dioLocator.post(
+      final response = await request.post(
         '/login',
         data: user.toJson(),
       );
