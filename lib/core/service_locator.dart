@@ -1,4 +1,4 @@
-import 'package:dio/dio.dart';
+import 'package:flutter_project/core/request.dart';
 import 'package:flutter_project/features/auth/data/datasource/login_remote_datasource.dart';
 import 'package:flutter_project/features/auth/domain/repository/authentication_user_repository.dart';
 import 'package:flutter_project/features/auth/domain/usecases/authentication_usecase.dart';
@@ -57,6 +57,6 @@ Future<void> setUpServiceLocator() async {
   //external
   final sharedPreferences = await SharedPreferences.getInstance();
   serviceLocator.registerFactory<SharedPreferences>(() => sharedPreferences);
-  //dio
-  serviceLocator.registerSingleton<Dio>(Dio());
+  // request
+  serviceLocator.registerSingleton<Request>(Request());
 }
