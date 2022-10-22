@@ -15,10 +15,8 @@ class AuthenticationScreen extends StatefulWidget {
 }
 
 class _AuthenticationScreenState extends State<AuthenticationScreen> {
-  final TextEditingController _emailController =
-      TextEditingController(text: 'kminchelle');
-  final TextEditingController _passwordController =
-      TextEditingController(text: '0lelplR');
+  final TextEditingController _emailController = TextEditingController();
+  final TextEditingController _passwordController = TextEditingController();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -33,11 +31,13 @@ class _AuthenticationScreenState extends State<AuthenticationScreen> {
           AuthField(
             hintText: 'Username',
             controller: _emailController,
+            key: const Key('username-field'),
           ),
           AuthField(
             hintText: 'Password',
             controller: _passwordController,
             obscureText: true,
+            key: const Key('password-field'),
           ),
           const SizedBox(height: 16.0),
           BlocConsumer<AuthenticationBloc, AuthenticationState>(
@@ -72,6 +72,7 @@ class _AuthenticationScreenState extends State<AuthenticationScreen> {
                 height: 54.0,
                 width: 180.0,
                 child: ElevatedButton(
+                  key: const Key('login-button'),
                   style: const ButtonStyle(),
                   onPressed: () {
                     context.read<AuthenticationBloc>().add(

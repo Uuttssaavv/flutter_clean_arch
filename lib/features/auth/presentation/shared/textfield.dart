@@ -15,6 +15,7 @@ class AuthField extends StatelessWidget {
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 24.0, vertical: 8.0),
       child: TextField(
+        key: key,
         controller: controller,
         obscureText: obscureText,
         decoration: InputDecoration(
