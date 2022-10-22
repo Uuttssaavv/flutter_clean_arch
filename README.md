@@ -36,6 +36,10 @@ A simple flutter app based on Reso Coder's tutorial but implemented using featur
 ##### Run the build runner command 
 ` flutter pub run build_runner build  `
 
+#### Run the integration tests
+` flutter drive \                                                 
+  --driver=test_driver/integration_test.dart \ --target=integration_test/app_test.dart  `
+
 ##### Run the project
 
 ` flutter run ` or simply press ` F5 key` if you are using VSCode
