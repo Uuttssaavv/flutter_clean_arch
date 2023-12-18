@@ -1,7 +1,7 @@
 ## Flutter Clean Architecture
 A simple flutter app based on Reso Coder's tutorial but implemented using feature-driven architecture.
 
-<img src="images/graph_.png">
+<img src="images/diagram.png">
 
 ### What is used in this project?
 - <b>Flutter bloc </b>
